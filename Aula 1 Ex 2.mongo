@@ -1,0 +1,14 @@
+db.alunos.insert({
+    "nome": "Felipe",
+    "data_nascimento": new Date(1994, 02, 26),
+    "notas": [10, 9, 4.5],
+    "curso": {
+        "nome": "Sistemas de informação"
+    },
+    "habilidades": [
+        {
+            "nome": "Inglês",
+            "nível": "Avançado"
+        }
+    ] 
+})

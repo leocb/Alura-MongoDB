@@ -1,0 +1,5 @@
+Vantagem:
+Produtos diferentes para o mesmo site (notebooks e sapatos, por exemplo)
+
+Desvantagem:
+Relacionamento fraco, inconsistencia de dados
