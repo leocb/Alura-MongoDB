@@ -1,0 +1,5 @@
+//Listar todos alunos com nome felipe e data de nascimento em 26/03/1994
+db.alunos.find({
+    "nome" : "felipe",
+    "data_nascimento" : new Date("1994-03-26T03:00:00Z")
+}).pretty()

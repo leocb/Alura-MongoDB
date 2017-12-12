@@ -1,0 +1,11 @@
+//Clausula Or e In
+db.alunos.find({
+    $or : [
+        {"curso.nome" : "sistema de informação" },
+        {"curso.nome": "Ciencias da computação"}
+    ]
+})
+
+db.alunos.find({
+    "curso.nome" : {$in : ["sistema de informação", "Ciencias da computação"]}
+})

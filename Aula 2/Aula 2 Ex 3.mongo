@@ -1,0 +1,4 @@
+//Listar todos alunos com a habilidade "Ingles"
+db.alunos.find({
+    "habilidades.nome" : "Inglês"
+}).pretty()
