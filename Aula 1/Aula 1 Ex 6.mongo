@@ -1,5 +1,2 @@
-//Para Listar todos alunos, use
-db.alunos.find()
-
 //Para remover um aluno, use
 db.alunos.remove({atributo})

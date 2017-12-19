@@ -1,0 +1,2 @@
+//Para Listar todos alunos, use
+db.alunos.find()
