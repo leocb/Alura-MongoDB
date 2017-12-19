@@ -1,0 +1,23 @@
+//Substituir documento inteiro por outro
+db.alunos.update({"_id" : ObjectId("5a26e055875a8c948a58a8bc")},{
+    "nome": "Leonardo Bottaro",
+    "data_nascimento": new Date(1995,07,07),
+    "notas": [
+        10,
+        9,
+        9.5
+    ],
+    "curso": {
+        "nome": "Engenharia da computação"
+    },
+    "habilidades": [
+        {
+            "nome": "Inglês",
+            "nível": "Avançado"
+        },
+        {
+            "nome": "Espanhol",
+            "nível": "Basico"
+        }
+    ]
+})

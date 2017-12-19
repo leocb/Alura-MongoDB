@@ -1,0 +1,71 @@
+db.alunos.insert({
+    nome: "Fernando",
+    data_nascimento: new Date(1994, 03, 26),
+    notas : [10, 4.5, 7],
+    curso : {
+        nome: "sistema de informação"
+    }
+})
+
+//deve retornar só um cara pela diferença no S e s de "sistema" nos registros
+db.alunos.find({"curso.nome":"sistema de informação"})
+
+//NÃO FAÇA ISSO, vai substituir todo o documento:
+db.alunos.update({"curso.nome":"sistema de informação"},
+    {
+        "curso.nome":"Sistema de informação"
+    }
+)
+
+//Use $set, para mudar apenas um valor especifico do documento:
+db.alunos.update({"curso.nome":"sistema de informação"},
+    {
+         $set:{"curso.nome":"Sistema de informação"}
+    }
+)
+
+
+//Para varios registros:
+db.alunos.update({"curso.nome":"sistema de informação"},
+    {
+         $set:{"curso.nome":"Sistema de informação"}
+    },
+    {
+        multi:true
+    }
+)
+
+//Para Adicionar um valor:
+db.alunos.update({"_id" : ObjectId("5a39417d31b73c4fefcdd0e5")},
+    {
+        $push:{
+             notas: 8.5
+        }
+    }
+)
+
+//Para Adicionar varios valores (ERRADO!):
+db.alunos.update({"_id" : ObjectId("5a39417d31b73c4fefcdd0e5")},
+    {
+        $push:{
+             notas: [8.5,3.0]
+        }
+    }
+)
+
+//Voltando a cagada:
+db.alunos.update({"_id" : ObjectId("5a39417d31b73c4fefcdd0e5")},
+    {
+         $set:{notas : [10, 4.5, 7, 8.5]}
+    }
+)
+
+
+//Para Adicionar varios valores (CORRETO):
+db.alunos.update({"_id" : ObjectId("5a39417d31b73c4fefcdd0e5")},
+    {
+        $push:{
+             notas: {$each:[8.5,3.0]}
+        }
+    }
+)

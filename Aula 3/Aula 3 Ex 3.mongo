@@ -1,0 +1,8 @@
+//Substituir as notas de todos alunos que fazem computação
+db.alunos.update({"curso.nome":{$regex:/computac?ç?a?ã?o/i}},{
+    $set:{
+        notas:[10,9,8]
+    }
+},{
+    multi:true
+})

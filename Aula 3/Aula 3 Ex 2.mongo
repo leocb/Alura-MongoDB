@@ -1,0 +1,8 @@
+//Substituir o curso de um documento especifico
+db.alunos.update({"_id" : ObjectId("5a26e055875a8c948a58a8bc")},{
+    $set:{
+        "curso": {
+            "nome": "Eng. da computação"
+        }
+    }
+})

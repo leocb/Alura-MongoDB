@@ -1,0 +1,4 @@
+//Adicione mais uma nota para o aluno Felipe
+db.alunos.update({"nome":"Felipe"},{
+    $push : {notas:4}
+})
