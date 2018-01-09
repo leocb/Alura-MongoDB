@@ -1,0 +1,2 @@
+// Crie um índice do 2dsphere no campo localização da coleção alunos
+db.alunos.createIndex({"localizacao": "2dsphere"})

@@ -1,0 +1,3 @@
+// Importe os alunos do arquivo baixado
+// Shell:
+mongoimport -c alunos --jsonArray < alunosParaImportar.json

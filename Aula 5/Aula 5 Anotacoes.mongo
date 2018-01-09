@@ -1,0 +1,5 @@
+// Para importar arquivos JSON para dentro do mongo:
+// shell - comando geral
+mongoimport -c [Collection] --jsonArray < [file.json]
+// comando especifico para o curso
+mongoimport -c alunos --jsonArray < alunosParaImportar.json
