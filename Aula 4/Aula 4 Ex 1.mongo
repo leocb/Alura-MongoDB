@@ -1,0 +1,5 @@
+// Busque todos os alunos com notas menores que 5.
+
+db.alunos.find({
+    notas : { $lt : 5 } // Less than
+})

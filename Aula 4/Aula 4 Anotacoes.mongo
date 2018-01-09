@@ -1,0 +1,25 @@
+// achar um valor especifico (in esta implicito)
+db.alunos.find({
+    notas : 8.5
+})
+
+// achar um valor maior que
+db.alunos.find({
+    notas : { $gt : 5 } // greater than
+})
+
+
+// achar somente um com nota maior que
+db.alunos.findOne({
+    notas : { $gt : 5 } // greater than
+})
+
+
+// ordenar por nome (alfabetica crescente)
+db.alunos.find().sort({
+    nome : 1 // -1 para decrescente
+})
+
+// somente os 3 primeiros
+db.alunos.find().limit(3)
+

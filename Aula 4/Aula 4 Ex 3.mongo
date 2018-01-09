@@ -1,0 +1,3 @@
+db.alunos.find().sort({
+    nome : 1
+})

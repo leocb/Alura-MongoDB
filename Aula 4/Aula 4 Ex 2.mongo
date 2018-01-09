@@ -1,0 +1,19 @@
+// Busque apenas um aluno do curso de Sistemas de informação
+
+db.alunos.findOne({
+    curso : {
+        nome : "Sistema de informação"
+    }
+})
+
+// OU 
+
+db.alunos.findOne({
+    "curso.nome" : "Sistema de informação"
+})
+
+// OU 
+
+db.alunos.findOne({
+    "curso.nome" : "Sistema de informação"
+}).limit(1)
