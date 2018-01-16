@@ -1,0 +1,40 @@
+//Busque os alunos mais próximos ao Marcelo
+
+db.alunos.aggregate([
+    {
+        $geoNear: {
+            "near": {
+                "coordinates": [
+                    -23.5640265,
+                    -46.6527128
+                ],
+                "type": "Point"
+            },
+            "distanceField": "distancia.calculada",
+            "spherical": true
+        }
+    },
+    {
+        $limit: 4
+    }
+])
+
+// OU
+
+
+db.alunos.aggregate([
+    {
+        $geoNear: {
+            "near": {
+                "coordinates": [
+                    -23.5640265,
+                    -46.6527128
+                ],
+                "type": "Point"
+            },
+            "distanceField": "distancia.calculada",
+            "spherical": true,
+            "num": 4
+        }
+    }
+])
